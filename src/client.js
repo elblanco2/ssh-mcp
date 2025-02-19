@@ -4,6 +4,7 @@ import chalk from 'chalk';
 
 export async function connect(host, options) {
   const conn = new Client();
+  const wsPort = options.wsPort || 8081;  // Match server's default port
   
   try {
     await new Promise((resolve, reject) => {
@@ -19,7 +20,7 @@ export async function connect(host, options) {
     });
 
     // Set up WebSocket connection for file operations
-    const ws = new WebSocket(`ws://localhost:8080`);
+    const ws = new WebSocket(`ws://localhost:${wsPort}`);
     
     ws.on('open', () => {
       console.log(chalk.green('✓ Connected to MCP server'));
