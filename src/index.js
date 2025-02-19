@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import { program } from 'commander';
 import { connect } from './client.js';
 import { startServer } from './server.js';
