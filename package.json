@@ -4,6 +4,9 @@
   "description": "An MCP for managing remote files over SSH with a local interface",
   "main": "src/index.js",
   "type": "module",
+  "bin": {
+    "ssh-mcp": "./src/index.js"
+  },
   "scripts": {
     "start": "node src/index.js",
     "install-remote": "node src/install.js"
